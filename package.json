@@ -1,0 +1,23 @@
+{
+  "name": "cmpe-272-project-mib",
+  "version": "1.0.0",
+  "description": "CMPE 272 project",
+  "main": "main.js",
+  "repository": "https://github.com/teraSurfer/cmpe-272-project-mib.git",
+  "author": "Achalaesh Lanka <achalaesh@live.com>",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.20.1",
+    "morgan": "^1.9.1",
+    "winston": "^3.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  },
+  "scripts": {
+    "start:dev": "nodemon"
+  }
+}
