@@ -1,2 +1,19 @@
-node_modules/
+############################
+# dependencies
+############################
+node_modules
+dist/
+
+############################
+# package manager
+############################
+
 yarn.lock
+package-lock.json
+
+############################
+# editor files
+############################
+
+.vscode
+.idea

@@ -1,0 +1,13 @@
+{
+    "name": "@mib/api-gateway",
+    "version": "0.0.1",
+    "private": true,
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "chalk": "^2.4.2",
+        "cors": "^2.8.5",
+        "express": "^4.17.1",
+        "helmet": "^3.20.1",
+        "morgan": "^1.9.1"
+    }
+}
