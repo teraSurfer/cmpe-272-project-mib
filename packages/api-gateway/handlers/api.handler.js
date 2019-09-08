@@ -1,3 +1,4 @@
+'use strict';
 exports.getApiRoute = async (req, res, next) => {
     res.cookie('SESS-ID', '1', {
         expires: new Date(Date.now() + 900000),
