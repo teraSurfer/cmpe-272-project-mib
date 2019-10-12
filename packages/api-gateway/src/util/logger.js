@@ -1,3 +1,4 @@
+'use strict';
 const winston = require('winston');
 
 const logger = winston.createLogger({
@@ -9,12 +10,5 @@ const logger = winston.createLogger({
         new winston.transports.File({ filename: 'combined.log' })
     ]
 });
-
-// Don't log to file if not in production.
-if (process.env.NODE_ENV !== 'production') {
-    logger.add(new winston.transports.Console({
-      format: winston.format.simple()
-    }));
-}
 
 module.exports = logger;

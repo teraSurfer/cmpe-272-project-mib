@@ -9,6 +9,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const helmet = require('helmet');
+const winston = require('winston');
 const routes = require('./util/routes');
 const logger = require('./util/logger');
 
@@ -18,6 +19,14 @@ class Server extends events.EventEmitter {
         super();
         this.app = express();
         this.server = null;
+        // Don't log to file if not in production.
+        if (process.env.NODE_ENV !== 'production') {
+            logger.info('Not in production, will log only in console.');
+            logger.add(new winston.transports.Console({
+              format: winston.format.simple()
+            }));
+        }
+        this.logger = logger;
     }
 
 
@@ -30,18 +39,18 @@ class Server extends events.EventEmitter {
                     process.env.PORT,
                     process.env.HOST,
                     () => {
-                        logger.info(
+                        this.logger.info(
                             `App started and running on Port: ${process.env.PORT}`
                             );
                     }
                 );
             } catch(err) {
-                logger.error(err);
+                this.logger.error(err);
             } finally {
                 return this.server;
             }
         } else {
-            logger.warn('Server already running.')
+            this.logger.warn('Server already running.')
             return this.server;
         }
     }

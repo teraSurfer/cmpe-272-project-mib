@@ -2,7 +2,7 @@
     <b-navbar toggleable="md" variant="dark" type="dark" class="shadow" fixed="top">
         <b-container>
             <b-navbar-brand to="/" class="nunito-font">
-                Project
+                HR Services
             </b-navbar-brand>
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
             <b-collapse id="nav-collapse" is-nav>
